@@ -20,8 +20,8 @@ DELETE FROM banks WHERE bank_id = $1
 `
 
 const allBanks = () => fetchAll(ALL_COMPANIES)
-const postBanks = (bank, btype) => fetchAll(POST_COMPANIES,bank, btype,bfoiz)
-const putBanks = (bId,bank, btype) => fetchAll(PUT_COMPANIES,bId,bank, btype,bfoiz)
+const postBanks = (bank, btype,bfoiz) => fetchAll(POST_COMPANIES,bank, btype, bfoiz)
+const putBanks = (bId,bank, btype,bfoiz) => fetchAll(PUT_COMPANIES,bId,bank, btype,bfoiz)
 const deleteBanks = (bId) => fetchAll(DELETE_COMPANIES,bId)
 
 module.exports = {

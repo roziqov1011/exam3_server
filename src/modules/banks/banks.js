@@ -13,12 +13,13 @@ module.exports = {
     },
     POST: async(req, res) => {
         try {
-            const {bank, btype,bfoiz} = req.body;
+            const {bank, btype, bfoiz} = req.body;
             if(!bank && !btype){
                 res.status(201).json({createt:'createt'})
             }
             const Banks = await model.postBanks(bank, btype,bfoiz)
             res.json(req.body)
+
         } catch(err) {
             res.status(500).json({
                 message: err.message
