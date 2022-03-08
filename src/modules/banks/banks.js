@@ -13,11 +13,11 @@ module.exports = {
     },
     POST: async(req, res) => {
         try {
-            const {bank, btype} = req.body;
+            const {bank, btype,bfoiz} = req.body;
             if(!bank && !btype){
                 res.status(201).json({createt:'createt'})
             }
-            const Banks = await model.postBanks(bank, btype)
+            const Banks = await model.postBanks(bank, btype,bfoiz)
             res.json(req.body)
         } catch(err) {
             res.status(500).json({
@@ -27,11 +27,11 @@ module.exports = {
     },
     PUT: async(req, res) => {
         try {
-            const {bId,bank, btype} = req.body;
+            const {bId,bank, btype,bfoiz} = req.body;
             if(!bId && !bank && !btype){
                 res.status(200)
             }
-            const Banks = await model.putBanks(bId, bank, btype)
+            const Banks = await model.putBanks(bId, bank, btype,bfoiz)
             res.status(200)
         } catch(err) {
             res.status(500).json({
